@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dunj8p3ebmb2t"]
+
+[ext_resource type="Script" uid="uid://bgpmshfbjyk5k" path="res://menu_derrota.gd" id="1_gpxcn"]
+[ext_resource type="Texture2D" uid="uid://xoqxwrmh32of" path="res://brick/Art Assets/Victoria.jpg" id="2_gpxcn"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gpxcn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvhxw"]
+bg_color = Color(0.85490197, 0, 0.08235294, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(16.427145, 9.172958, 18.892157, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MenuVictoria" type="Control" unique_id=2085789873]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gpxcn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2013608280]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1828.0
+offset_top = -714.0
+offset_right = 2012.0
+offset_bottom = 1446.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gpxcn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=438398342]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 29.714
+anchor_bottom = 17.004002
+offset_left = 345.0
+offset_top = 237.0
+offset_right = -33404.527
+offset_bottom = -10517.593
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1017279786]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.79969335, 0.84310645, 0.98775524, 1)
+theme_override_colors/font_shadow_color = Color(0.20316094, 0.1552918, 0.6496031, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxLine_gpxcn")
+text = "Ganaste!!!"
+
+[node name="Salir" type="Button" parent="VBoxContainer" unique_id=166172233]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvhxw")
+text = "SALIR
+"
+
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

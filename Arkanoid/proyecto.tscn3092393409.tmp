@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dnh3tx7sdiy3k"]
+
+[ext_resource type="Texture2D" uid="uid://bssotcn2iaufr" path="res://brick/Art Assets/Test BG/fondo godot.webp" id="1_r3jmu"]
+[ext_resource type="Script" uid="uid://bvm2oq8rumosv" path="res://paleta3.gd" id="2_o3q2s"]
+[ext_resource type="Texture2D" uid="uid://c7n81hkr4u21l" path="res://brick/Art Assets/Paddles with HealthBar.png" id="3_d0xek"]
+[ext_resource type="Script" uid="uid://dp4ymmkgwdcu8" path="res://pelota3.gd" id="4_kqv6p"]
+[ext_resource type="Texture2D" uid="uid://jv284i1pbym5" path="res://brick/Art Assets/Balls.png" id="5_b14df"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3jmu"]
+size = Vector2(224, 45)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3jmu"]
+radius = 11.0
+
+[node name="Proyecto" type="Node2D" unique_id=1746979145]
+
+[node name="Fondo" type="Node2D" parent="." unique_id=1288466812]
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo" unique_id=1022885027]
+position = Vector2(593, 311)
+scale = Vector2(1.8998696, 2.014019)
+texture = ExtResource("1_r3jmu")
+region_rect = Rect2(179.00058, 61.000214, 282.0004, 237.0003)
+
+[node name="Paleta" type="CharacterBody2D" parent="." unique_id=266799325]
+position = Vector2(592, 578)
+script = ExtResource("2_o3q2s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Paleta" unique_id=257794342]
+position = Vector2(1.0000458, 9.536743e-07)
+scale = Vector2(5.735294, 5.7352943)
+texture = ExtResource("3_d0xek")
+region_enabled = true
+region_rect = Rect2(99.60239, 0, 39.81987, 17.02372)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paleta" unique_id=1597320163]
+visibility_layer = 3
+position = Vector2(1, 4.5)
+shape = SubResource("RectangleShape2D_r3jmu")
+
+[node name="Pelota" type="CharacterBody2D" parent="." unique_id=737978678]
+position = Vector2(592, 547)
+script = ExtResource("4_kqv6p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pelota" unique_id=392474217]
+scale = Vector2(1.7307693, 1.7307693)
+texture = ExtResource("5_b14df")
+region_enabled = true
+region_rect = Rect2(17.275455, 33.010807, 13.56288, 13.910496)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pelota" unique_id=908466066]
+light_mask = 2
+shape = SubResource("CircleShape2D_r3jmu")

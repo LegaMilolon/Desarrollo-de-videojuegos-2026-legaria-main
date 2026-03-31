@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://ccgr4q8c28qrj"]
+
+[ext_resource type="Script" uid="uid://bgpmshfbjyk5k" path="res://menu_derrota.gd" id="1_cvhxw"]
+[ext_resource type="Texture2D" uid="uid://dekq6gmob4o4s" path="res://brick/Art Assets/derrota.jpg" id="2_cvhxw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvhxw"]
+bg_color = Color(0.85490197, 0, 0.08235294, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(16.427145, 9.172958, 18.892157, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MenuDerrota" type="Control" unique_id=2085789873]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cvhxw")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2013608280]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -925.0
+offset_top = -466.0
+offset_right = 574.0
+offset_bottom = 441.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cvhxw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=438398342]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 29.714
+anchor_bottom = 17.004002
+offset_left = 412.0
+offset_top = 266.0
+offset_right = -33467.527
+offset_bottom = -10488.593
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+
+[node name="Reintentar" type="Button" parent="VBoxContainer" unique_id=1229419047]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvhxw")
+text = "REINTENTAR"
+
+[node name="Salir" type="Button" parent="VBoxContainer" unique_id=166172233]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvhxw")
+text = "SALIR
+"
+
+[connection signal="pressed" from="VBoxContainer/Reintentar" to="." method="_on_reintentar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

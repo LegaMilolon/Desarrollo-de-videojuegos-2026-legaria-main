@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dnh3tx7sdiy3k"]
+
+[ext_resource type="Texture2D" uid="uid://bssotcn2iaufr" path="res://brick/Art Assets/Test BG/fondo godot.webp" id="1_r3jmu"]
+[ext_resource type="Script" uid="uid://bvm2oq8rumosv" path="res://paleta3.gd" id="2_o3q2s"]
+[ext_resource type="Texture2D" uid="uid://c7n81hkr4u21l" path="res://brick/Art Assets/Paddles with HealthBar.png" id="3_d0xek"]
+[ext_resource type="Script" uid="uid://dp4ymmkgwdcu8" path="res://pelota3.gd" id="4_kqv6p"]
+[ext_resource type="Texture2D" uid="uid://jv284i1pbym5" path="res://brick/Art Assets/Balls.png" id="5_b14df"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3jmu"]
+radius = 11.0
+
+[node name="Proyecto" type="Node2D" unique_id=1746979145]
+
+[node name="Fondo" type="Node2D" parent="." unique_id=1288466812]
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo" unique_id=1022885027]
+position = Vector2(580.00006, 311.00003)
+scale = Vector2(1.8998696, 2.014019)
+texture = ExtResource("1_r3jmu")
+region_rect = Rect2(179.00058, 61.000214, 282.0004, 237.0003)
+
+[node name="Paleta" type="CharacterBody2D" parent="." unique_id=266799325]
+position = Vector2(581, 578)
+motion_mode = 1
+script = ExtResource("2_o3q2s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Paleta" unique_id=257794342]
+position = Vector2(1.0000458, 9.536743e-07)
+scale = Vector2(5.735294, 5.7352943)
+texture = ExtResource("3_d0xek")
+region_enabled = true
+region_rect = Rect2(99.60239, 0, 39.81987, 17.02372)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Paleta" unique_id=1168048985]
+polygon = PackedVector2Array(0, -14, -1, -18, -64, -18, -108, -8, -108, 21, 112, 22, 112, -9, 66, -17, -1, -18)
+
+[node name="Pelota" type="CharacterBody2D" parent="." unique_id=737978678]
+position = Vector2(580, 547)
+motion_mode = 1
+script = ExtResource("4_kqv6p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pelota" unique_id=392474217]
+scale = Vector2(1.7307693, 1.7307693)
+texture = ExtResource("5_b14df")
+region_enabled = true
+region_rect = Rect2(17.275455, 33.010807, 13.56288, 13.910496)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pelota" unique_id=908466066]
+light_mask = 2
+shape = SubResource("CircleShape2D_r3jmu")
+
+[node name="Limite" type="StaticBody2D" parent="." unique_id=1293405269]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limite" unique_id=1392859384]
+position = Vector2(1, 0)
+polygon = PackedVector2Array(-2, -2, 1149, 1, 1151, 674, 1188, 674, 1188, -52, -30, -50, -27, 674, 0, 672)
