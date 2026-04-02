@@ -1,8 +1,5 @@
 extends Control
 
-## Main menu controller
-## Handles navigation to game start and application exit
-
 const GAME_SCENE_PATH: String = "res://proyecto.tscn"
 
 func _ready() -> void:

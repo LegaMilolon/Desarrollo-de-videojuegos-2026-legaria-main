@@ -1,8 +1,5 @@
 extends CanvasLayer
 
-## Lives display UI component
-## Shows player lives in bottom-left corner of screen
-
 const HEART_SPACING: float = 60.0
 const BOTTOM_LEFT_POSITION: Vector2 = Vector2(40, 620)
 
@@ -21,16 +18,13 @@ func _setup_hearts_from_paddle() -> void:
 	
 	var paddle = paddle_nodes[0]
 	
-	# Find all heart sprites in paddle
 	var heart_nodes: Array = []
 	for child in paddle.get_children():
 		if "Vida" in child.name and child is Sprite2D:
 			heart_nodes.append(child)
 	
-	# Sort hearts by name to maintain order
 	heart_nodes.sort_custom(func(a, b): return a.name > b.name)
 	
-	# Reparent hearts to this UI layer
 	for i in range(heart_nodes.size()):
 		var heart: Sprite2D = heart_nodes[i]
 		heart.reparent(self)

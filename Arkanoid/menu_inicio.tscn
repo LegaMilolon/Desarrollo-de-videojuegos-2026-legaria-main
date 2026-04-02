@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://k0736ma4q7rf"]
 
 [ext_resource type="Script" uid="uid://pwgloj5g7ke2" path="res://menu_inicio.gd" id="1_ylpju"]
-[ext_resource type="Texture2D" uid="uid://d23d8pnhcgvm1" path="res://brick/Art Assets/fondo3.jpg" id="2_ylpju"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_ylpju"]
 
@@ -41,21 +40,6 @@ offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ylpju")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=740247297]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -578.5
-offset_top = -330.5
-offset_right = 578.5
-offset_bottom = 317.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_ylpju")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=982986350]
 layout_mode = 1

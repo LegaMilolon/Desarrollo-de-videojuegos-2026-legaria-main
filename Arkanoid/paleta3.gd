@@ -1,8 +1,5 @@
 extends CharacterBody2D
 
-## Player-controlled paddle for Arkanoid
-## Manages player lives and horizontal movement
-
 signal lives_changed(current_lives: int)
 
 const MOVEMENT_SPEED: float = 600.0

@@ -1,8 +1,5 @@
 extends Area2D
 
-## Death zone detector for fallen balls
-## Triggers life loss and ball respawn mechanics
-
 func _ready() -> void:
 	_connect_signals()
 

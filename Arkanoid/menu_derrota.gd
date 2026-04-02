@@ -1,8 +1,5 @@
 extends Control
 
-## Game over menu controller
-## Allows player to retry or return to main menu
-
 const GAMEPLAY_SCENE: String = "res://proyecto.tscn"
 const MAIN_MENU_SCENE: String = "res://menu_inicio.tscn"
 

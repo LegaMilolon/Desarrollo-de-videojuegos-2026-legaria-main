@@ -1,8 +1,5 @@
 extends StaticBody2D
 
-## Brick component for Arkanoid game
-## Handles damage states and destruction
-
 enum BrickHealth { INTACT, DAMAGED, DESTROYED }
 
 var current_health: BrickHealth = BrickHealth.INTACT
@@ -21,7 +18,6 @@ func _initialize_brick() -> void:
 	if full_sprite:
 		full_sprite.show()
 	
-	# Warning if sprites are missing
 	if not damaged_sprite and damage_count < 2:
 		push_warning("Brick '%s': Missing 'Roto' sprite node - brick will be destroyed in one hit" % name)
 	if not full_sprite:
@@ -32,7 +28,6 @@ func recibir_golpe() -> void:
 	_process_damage()
 
 func _process_damage() -> void:
-	# If no damaged sprite exists, destroy in one hit
 	if not damaged_sprite:
 		_destroy_brick()
 		return
